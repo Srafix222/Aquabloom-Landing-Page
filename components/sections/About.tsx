@@ -9,11 +9,11 @@ export const About: React.FC = () => {
         { icon: Recycle, title: 'Recyclable', description: 'Eco-conscious packaging' },
     ];
     return (
-        <AnimatedSection id="about" className="py-20 lg:py-32 bg-white">
+        <AnimatedSection id="about" className="py-20 lg:py-32 bg-white scroll-mt-20">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div className="rounded-2xl overflow-hidden shadow-lg">
-                        <img src="https://picsum.photos/seed/plant/800/900" alt="A healthy aloe vera plant in a terracotta pot" className="w-full h-full object-cover" />
+                        <img src="https://www.aloe-vera-gel-shop.com/newshop/wp-content/uploads/2015/05/aloe-harvest.jpg" alt="A healthy aloe vera plant in a terracotta pot" className="w-full h-full object-cover" />
                     </div>
                     <div>
                         <h2 className="font-serif text-4xl md:text-5xl font-medium">From One Plant, a Promise</h2>

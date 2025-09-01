@@ -104,7 +104,7 @@ export const Header: React.FC = () => {
           animate="visible"
         >
             <div className="flex items-center justify-between">
-                <a href="#hero" className="text-2xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage">Aquabloom</a>
+                <a href="#hero" className="text-2xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage" onClick={() => setIsMenuOpen(false)}>Aquabloom</a>
                 <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
                     <X className="h-6 w-6" />
                 </Button>

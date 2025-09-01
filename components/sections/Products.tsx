@@ -9,7 +9,7 @@ interface ProductsProps {
 
 export const Products: React.FC<ProductsProps> = ({ products }) => {
     return (
-        <AnimatedSection id="shop" className="py-20 lg:py-32 bg-sand-beige/40">
+        <AnimatedSection id="shop" className="py-20 lg:py-32 bg-sand-beige/40 scroll-mt-20">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="font-serif text-4xl md:text-5xl font-medium">Discover Our Collection</h2>

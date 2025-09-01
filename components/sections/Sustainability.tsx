@@ -9,7 +9,7 @@ export const Sustainability: React.FC = () => {
         { icon: Rabbit, title: "Cruelty-Free", text: "We are proudly Leaping Bunny certified, ensuring no animal testing ever." },
     ];
     return (
-        <AnimatedSection id="sustainability" className="py-20 lg:py-32 bg-sand-beige/40">
+        <AnimatedSection id="sustainability" className="py-20 lg:py-32 bg-sand-beige/40 scroll-mt-20">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div className="order-2 lg:order-1">

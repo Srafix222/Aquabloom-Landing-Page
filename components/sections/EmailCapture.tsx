@@ -27,7 +27,7 @@ export const EmailCapture: React.FC = () => {
         }
     };
     return (
-        <AnimatedSection id="contact" className="py-20 lg:py-32 bg-white">
+        <AnimatedSection id="contact" className="py-20 lg:py-32 bg-white scroll-mt-20">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="font-serif text-4xl md:text-5xl font-medium">Join the Bloom Club 🌿</h2>

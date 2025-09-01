@@ -16,25 +16,25 @@ export const Footer: React.FC = () => {
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div className="col-span-2 md:col-span-1">
-                        <h3 className="text-3xl font-serif text-aloe-green">Aquabloom</h3>
+                        <a href="#hero" className="text-3xl font-serif text-aloe-green" aria-label="Scroll to top of page">Aquabloom</a>
                         <p className="mt-2 text-sm italic">Born from Nature’s Embrace</p>
                     </div>
                     <div>
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige">Shop</h4>
                         <ul className="mt-4 space-y-2">
                             <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Shop section">All Products</a></li>
-                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Skincare section">Skincare</a></li>
-                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Haircare section">Haircare</a></li>
-                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Sets & Gifts section">Sets & Gifts</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Shop section">Skincare</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Shop section">Haircare</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Shop section">Sets & Gifts</a></li>
                         </ul>
                     </div>
                      <div>
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige">About</h4>
                         <ul className="mt-4 space-y-2">
-                            <li><a href="#about" className="hover:text-white" aria-label="Scroll to Our Story section">Our Story</a></li>
+                            <li><a href="#about" className="hover:text-white" aria-label="Scroll to About section">Our Story</a></li>
                             <li><a href="#sustainability" className="hover:text-white" aria-label="Scroll to Sustainability section">Sustainability</a></li>
                             <li><a href="#reviews" className="hover:text-white" aria-label="Scroll to Reviews section">Reviews</a></li>
-                            <li><a href="#contact" className="hover:text-white" aria-label="Scroll to Contact Us section">Contact Us</a></li>
+                            <li><a href="#contact" className="hover:text-white" aria-label="Scroll to Contact section">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>

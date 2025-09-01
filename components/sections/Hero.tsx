@@ -29,9 +29,9 @@ const itemVariants: Variants = {
 
 export const Hero: React.FC = () => {
     return (
-        <section id="hero" className="relative flex h-[80vh] min-h-[600px] items-center justify-center text-center text-white">
+        <section id="hero" className="relative flex h-[80vh] min-h-[600px] items-center justify-center text-center text-white scroll-mt-20">
             <div className="absolute inset-0">
-                <img src="https://picsum.photos/seed/aloe-bg/1920/1080" alt="Close-up of an aloe vera plant with water droplets" className="h-full w-full object-cover"/>
+                <img src="https://images.pexels.com/photos/1581101/pexels-photo-1581101.jpeg?cs=srgb&dl=pexels-jvdm-1581101.jpg&fm=jpg" className="w-full h-full object-cover"/>
                 <div className="absolute inset-0 bg-charcoal-gray/60"></div>
             </div>
             <motion.div 
