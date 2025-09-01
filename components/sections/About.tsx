@@ -9,7 +9,7 @@ export const About: React.FC = () => {
         { icon: Recycle, title: 'Recyclable', description: 'Eco-conscious packaging' },
     ];
     return (
-        <AnimatedSection id="about" className="py-20 lg:py-32 bg-white scroll-mt-20">
+        <AnimatedSection id="about" className="py-20 lg:py-32 bg-white scroll-mt-20 dark:bg-gray-800">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -17,17 +17,17 @@ export const About: React.FC = () => {
                     </div>
                     <div>
                         <h2 className="font-serif text-4xl md:text-5xl font-medium">From One Plant, a Promise</h2>
-                        <p className="mt-6 text-lg text-charcoal-gray/80 leading-relaxed">
+                        <p className="mt-6 text-lg text-charcoal-gray/80 leading-relaxed dark:text-sand-beige/90">
                             Aquabloom began with one resilient aloe vera plant and a promise: skincare that feels like a deep breath. Today, our science-backed blends honor nature’s intelligence—pure, gentle, and effective.
                         </p>
                         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
                             {features.map(feature => (
                                 <div key={feature.title} className="flex flex-col items-center text-center">
-                                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-aloe-green/10 text-aloe-green">
+                                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-aloe-green/10 text-aloe-green dark:bg-aqua-blue/10 dark:text-aqua-blue">
                                         <feature.icon className="h-8 w-8" />
                                     </div>
                                     <h3 className="mt-4 font-semibold text-lg">{feature.title}</h3>
-                                    <p className="mt-1 text-sm text-charcoal-gray/70">{feature.description}</p>
+                                    <p className="mt-1 text-sm text-charcoal-gray/70 dark:text-sand-beige/80">{feature.description}</p>
                                 </div>
                             ))}
                         </div>

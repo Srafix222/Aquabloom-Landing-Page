@@ -34,7 +34,7 @@ export const Toaster: React.FC<{ children: React.ReactNode }> = ({ children }) =
                             exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
                             className={cn(
                                 "relative flex w-full max-w-sm items-center justify-between space-x-4 overflow-hidden rounded-md border p-4 pr-8 shadow-lg",
-                                toast.variant === 'destructive' ? 'border-red-500 bg-red-50 text-red-800' : 'border-charcoal-gray/20 bg-white text-charcoal-gray'
+                                toast.variant === 'destructive' ? 'border-red-500 bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-300 dark:border-red-700' : 'border-charcoal-gray/20 bg-white text-charcoal-gray dark:bg-gray-800 dark:text-sand-beige dark:border-sand-beige/20'
                             )}
                         >
                             <div className="grid gap-1">

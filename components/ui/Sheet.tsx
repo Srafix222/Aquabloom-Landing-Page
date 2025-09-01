@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -53,7 +52,7 @@ export const Sheet: React.FC<{ open: boolean; onOpenChange: (open: boolean) => v
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="fixed top-0 right-0 z-50 h-full w-4/5 max-w-sm bg-sand-beige p-6 shadow-2xl"
+                        className="fixed top-0 right-0 z-50 h-full w-4/5 max-w-sm bg-sand-beige p-6 shadow-2xl dark:bg-gray-900"
                         role="dialog"
                         aria-modal="true"
                     >

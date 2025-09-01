@@ -12,21 +12,22 @@ interface ReviewsProps {
 
 export const Reviews: React.FC<ReviewsProps> = ({ testimonials }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
 
     useEffect(() => {
-        if (prefersReducedMotion) return;
+        if (prefersReducedMotion || isHovered) return;
 
         const interval = setInterval(() => {
             setCurrentIndex(prevIndex => (prevIndex + 1) % testimonials.length);
         }, 6000);
 
         return () => clearInterval(interval);
-    }, [testimonials.length, prefersReducedMotion]);
+    }, [testimonials.length, prefersReducedMotion, isHovered]);
 
     if (prefersReducedMotion) {
         return (
-            <AnimatedSection id="reviews" className="py-20 lg:py-32 bg-white scroll-mt-20">
+            <AnimatedSection id="reviews" className="py-20 lg:py-32 bg-white dark:bg-gray-800 scroll-mt-20">
                 <div className="container mx-auto px-6 lg:px-8">
                     <div className="text-center">
                         <h2 className="font-serif text-4xl md:text-5xl font-medium">Voices of Our Community</h2>
@@ -40,8 +41,12 @@ export const Reviews: React.FC<ReviewsProps> = ({ testimonials }) => {
     }
 
     return (
-        <AnimatedSection id="reviews" className="py-20 lg:py-32 bg-white scroll-mt-20">
-            <div className="container mx-auto px-6 lg:px-8 text-center">
+        <AnimatedSection id="reviews" className="py-20 lg:py-32 bg-white dark:bg-gray-800 scroll-mt-20">
+            <div 
+                className="container mx-auto px-6 lg:px-8 text-center"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 <h2 className="font-serif text-4xl md:text-5xl font-medium">Voices of Our Community</h2>
                 <div className="mt-16 relative h-80 md:h-64 overflow-hidden">
                     <AnimatePresence initial={false} custom={currentIndex}>
@@ -59,7 +64,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ testimonials }) => {
                 </div>
                  <div className="mt-8 flex justify-center space-x-3">
                     {testimonials.map((_, index) => (
-                        <button key={index} onClick={() => setCurrentIndex(index)} className={cn("h-2 w-2 rounded-full transition-colors", currentIndex === index ? 'bg-aloe-green' : 'bg-charcoal-gray/20')}/>
+                        <button key={index} onClick={() => setCurrentIndex(index)} className={cn("h-2 w-2 rounded-full transition-colors", currentIndex === index ? 'bg-aloe-green dark:bg-aqua-blue' : 'bg-charcoal-gray/20 dark:bg-sand-beige/40')}/>
                     ))}
                 </div>
             </div>

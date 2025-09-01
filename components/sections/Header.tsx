@@ -4,6 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { Button } from '../ui/Button';
 import { Sheet } from '../ui/Sheet';
+import { ThemeToggle } from '../shared/ThemeToggle';
 
 const sheetContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -65,15 +66,20 @@ export const Header: React.FC = () => {
   ];
 
   const getLinkClass = (id: string) => cn(
-    "transition-colors hover:text-aloe-green",
-    activeSection === id ? 'text-aloe-green font-semibold' : 'text-charcoal-gray'
+    "transition-colors hover:text-aloe-green dark:hover:text-aqua-blue",
+    activeSection === id ? 'text-aloe-green font-semibold dark:text-aqua-blue' : 'text-charcoal-gray dark:text-sand-beige/80'
   );
 
   return (
-    <header className={cn("sticky top-0 z-30 w-full transition-all duration-300", isScrolled ? 'bg-sand-beige/80 shadow-md backdrop-blur-lg' : 'bg-transparent')}>
+    <header className={cn("sticky top-0 z-30 w-full transition-all duration-300", isScrolled ? 'bg-sand-beige/80 shadow-md backdrop-blur-lg dark:bg-charcoal-gray/80' : 'bg-transparent')}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <a href="#hero" className="text-3xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage">Aquabloom</a>
+          <a href="#hero" className="flex items-center text-aloe-green transition-colors hover:text-aloe-green/80 dark:text-aqua-blue dark:hover:text-aqua-blue/80" aria-label="Aquabloom homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-8 w-8 mr-2" fill="currentColor">
+              <path d="M50,2C65,25,75,50,50,98C25,50,35,25,50,2z" />
+            </svg>
+            <span className="text-3xl font-serif font-medium">Aquabloom</span>
+          </a>
           <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map(link => (
               <a 
@@ -86,10 +92,11 @@ export const Header: React.FC = () => {
               </a>
             ))}
           </nav>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <a href="#shop" className="hidden lg:inline-flex" aria-label="Scroll to Shop section">
               <Button variant="default">Shop Now</Button>
             </a>
+            <ThemeToggle />
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMenuOpen(true)} aria-label="Open menu">
               <Menu className="h-6 w-6" />
             </Button>
@@ -104,7 +111,12 @@ export const Header: React.FC = () => {
           animate="visible"
         >
             <div className="flex items-center justify-between">
-                <a href="#hero" className="text-2xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage" onClick={() => setIsMenuOpen(false)}>Aquabloom</a>
+                <a href="#hero" className="flex items-center text-aloe-green transition-colors hover:text-aloe-green/80 dark:text-aqua-blue" aria-label="Aquabloom homepage" onClick={() => setIsMenuOpen(false)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-7 w-7 mr-2" fill="currentColor">
+                    <path d="M50,2C65,25,75,50,50,98C25,50,35,25,50,2z" />
+                  </svg>
+                  <span className="text-2xl font-serif font-medium">Aquabloom</span>
+                </a>
                 <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
                     <X className="h-6 w-6" />
                 </Button>

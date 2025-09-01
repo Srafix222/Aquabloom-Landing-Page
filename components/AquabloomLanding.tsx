@@ -27,6 +27,8 @@ import { Reviews } from './sections/Reviews';
 import { Sustainability } from './sections/Sustainability';
 import { EmailCapture } from './sections/EmailCapture';
 import { Footer } from './sections/Footer';
+import { LogoCarousel } from './sections/LogoCarousel';
+import { ProductCarousel } from './sections/ProductCarousel';
 
 //=========== MAIN LANDING PAGE COMPONENT ===========//
 
@@ -41,12 +43,14 @@ const AquabloomLanding: React.FC<AquabloomLandingProps> = ({
 }) => {
   return (
     <Toaster>
-      <main className="bg-sand-beige/50">
+      <main className="bg-sand-beige/50 dark:bg-gray-900">
         <Header />
         <Hero />
         <About />
         <Products products={products} />
         <Reviews testimonials={testimonials} />
+        <ProductCarousel products={products} />
+        <LogoCarousel />
         <Sustainability />
         <EmailCapture />
         <Footer />

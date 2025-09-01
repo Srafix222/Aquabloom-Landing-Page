@@ -41,15 +41,15 @@ export const Footer: React.FC = () => {
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige">Connect</h4>
                          <div className="flex space-x-4 mt-4">
                             {socialLinks.map(link => (
-                                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} className="text-sand-beige/70 hover:text-white">
+                                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} className="text-sand-beige/80 hover:text-white">
                                     <link.icon className="h-6 w-6" />
                                 </a>
                             ))}
                         </div>
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige mt-6">Share</h4>
                         <div className="flex space-x-4 mt-4">
-                             <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noopener noreferrer" className="text-sand-beige/70 hover:text-white" aria-label="Share on Facebook"><Facebook className="h-6 w-6" /></a>
-                             <a href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`} target="_blank" rel="noopener noreferrer" className="text-sand-beige/70 hover:text-white" aria-label="Share on Twitter"><Twitter className="h-6 w-6" /></a>
+                             <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noopener noreferrer" className="text-sand-beige/80 hover:text-white" aria-label="Share on Facebook"><Facebook className="h-6 w-6" /></a>
+                             <a href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareText}`} target="_blank" rel="noopener noreferrer" className="text-sand-beige/80 hover:text-white" aria-label="Share on Twitter"><Twitter className="h-6 w-6" /></a>
                         </div>
                     </div>
                 </div>

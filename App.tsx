@@ -1,12 +1,14 @@
-
 import React from 'react';
 import AquabloomLanding from './components/AquabloomLanding';
+import { ThemeProvider } from './components/context/ThemeContext';
 
 function App() {
   return (
-    <div className="font-sans">
-      <AquabloomLanding />
-    </div>
+    <ThemeProvider>
+      <div className="font-sans">
+        <AquabloomLanding />
+      </div>
+    </ThemeProvider>
   );
 }
 

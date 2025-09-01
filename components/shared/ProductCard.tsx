@@ -33,7 +33,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Content */}
         <CardContent className="flex-grow flex flex-col p-4">
           <h3 className="font-serif text-xl font-medium">{product.name}</h3>
-          <ul className="mt-3 list-disc list-inside text-charcoal-gray/70 space-y-1">
+          <ul className="mt-3 list-disc list-inside text-charcoal-gray/70 space-y-1 dark:text-sand-beige/80">
             {product.benefits.map((benefit) => (
               <li key={benefit}>{benefit}</li>
             ))}
@@ -41,18 +41,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           {/* Footer */}
           <div className="mt-auto pt-4">
-            <p className="mt-1 text-lg font-semibold text-aloe-green">{product.price}</p>
+            <p className="mt-1 text-lg font-semibold text-aloe-green dark:text-aqua-blue">{product.price}</p>
 
             {/* Quantity Selector */}
             <div className="flex items-center gap-2 mt-3">
-              <label htmlFor={`quantity-${product.id}`} className="text-sm text-charcoal-gray/70">Qty:</label>
+              <label htmlFor={`quantity-${product.id}`} className="text-sm text-charcoal-gray/70 dark:text-sand-beige/80">Qty:</label>
               <input
                 id={`quantity-${product.id}`}
                 type="number"
                 min={1}
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
-                className="w-16 rounded-none bg-transparent border-0 border-b-2 border-charcoal-gray/20 px-2 py-1 text-center text-sm transition-colors focus:ring-0 focus:border-aloe-green"
+                className="w-16 rounded-none bg-transparent border-0 border-b-2 border-charcoal-gray/20 px-2 py-1 text-center text-sm transition-colors focus:ring-0 focus:border-aloe-green dark:border-sand-beige/20 dark:focus:border-aqua-blue"
               />
             </div>
 
