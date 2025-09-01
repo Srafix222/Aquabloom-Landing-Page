@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
         <div className="flex h-20 items-center justify-between">
           <a href="#hero" className="flex items-center text-aloe-green transition-colors hover:text-aloe-green/80 dark:text-aqua-blue dark:hover:text-aqua-blue/80" aria-label="Aquabloom homepage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-8 w-8 mr-2" fill="currentColor">
-              <path d="M50,2C65,25,75,50,50,98C25,50,35,25,50,2z" />
+              <path d="M50,98 C20,70 15,40 50,2 C85,40 80,70 50,98 Z M50,45 C45,55 45,65 50,75 C55,65 55,55 50,45 Z" />
             </svg>
             <span className="text-3xl font-serif font-medium">Aquabloom</span>
           </a>
@@ -113,7 +113,7 @@ export const Header: React.FC = () => {
             <div className="flex items-center justify-between">
                 <a href="#hero" className="flex items-center text-aloe-green transition-colors hover:text-aloe-green/80 dark:text-aqua-blue" aria-label="Aquabloom homepage" onClick={() => setIsMenuOpen(false)}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="h-7 w-7 mr-2" fill="currentColor">
-                    <path d="M50,2C65,25,75,50,50,98C25,50,35,25,50,2z" />
+                    <path d="M50,98 C20,70 15,40 50,2 C85,40 80,70 50,98 Z M50,45 C45,55 45,65 50,75 C55,65 55,55 50,45 Z" />
                   </svg>
                   <span className="text-2xl font-serif font-medium">Aquabloom</span>
                 </a>

@@ -8,7 +8,8 @@ interface ProductCarouselProps {
 }
 
 export const ProductCarousel: React.FC<ProductCarouselProps> = ({ products }) => {
-    const duplicatedProducts = [...products, ...products];
+    const carouselProducts = products.slice(0, 8);
+    const duplicatedProducts = [...carouselProducts, ...carouselProducts];
 
     return (
         <AnimatedSection className="py-20 lg:py-24 bg-sand-beige/40 dark:bg-gray-900">

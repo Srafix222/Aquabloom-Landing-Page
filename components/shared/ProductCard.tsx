@@ -18,16 +18,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       transition={{ type: 'spring', stiffness: 300 }}
     >
       <Card className="h-full overflow-hidden flex flex-col">
-        {/* Square Image Box with Hover Overlay */}
+        {/* Square Image Box */}
         <div className="relative aspect-square overflow-hidden">
           <img
             src={product.image}
             alt={`Photo of ${product.name}`}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-charcoal-gray/60 p-4 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <p className="text-lg font-semibold">{product.packaging}</p>
-          </div>
         </div>
 
         {/* Content */}
@@ -41,6 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           {/* Footer */}
           <div className="mt-auto pt-4">
+            <p className="text-sm text-charcoal-gray/70 dark:text-sand-beige/70">{product.packaging}</p>
             <p className="mt-1 text-lg font-semibold text-aloe-green dark:text-aqua-blue">{product.price}</p>
 
             {/* Quantity Selector */}
