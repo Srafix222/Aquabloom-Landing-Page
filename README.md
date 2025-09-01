@@ -2,19 +2,17 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Modern Landing Pages for Your Brand 🌿✨
 
-This contains everything you need to run your app locally.
+This repo showcases my work in building **responsive, elegant landing pages** using React, TailwindCSS, and shadcn/ui.  
+Each page is designed with **clean layouts, smooth animations, and brand-focused storytelling** to help businesses shine online.  
 
-View your app in AI Studio: https://ai.studio/apps/drive/1PrfIWZuWA7M4cWj-kwGz7odyc3pRQFYh
+## Want a Landing Page for Your Brand?
 
-## Run Locally
+I specialize in creating pages that are:  
+- **Responsive & mobile-first** 📱  
+- **On-brand with custom visuals** 🎨  
+- **Optimized for conversions** ⚡  
 
-**Prerequisites:**  Node.js
+If you’d like a **custom landing page** for your business, feel free to **reach out**. Let’s bring your brand to life on the web! 🚀
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
