@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
     const socialLinks = [
         { href: '#', icon: Instagram, label: 'Instagram' },
         { href: '#', icon: Facebook, label: 'Facebook' },
-        { href: '#', icon: Twitter, label: 'Twitter' },
+        { href: '#', label: 'Twitter', icon: Twitter },
     ];
 
     const shareUrl = typeof window !== 'undefined' ? encodeURIComponent(window.location.href) : '';
@@ -22,19 +22,19 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige">Shop</h4>
                         <ul className="mt-4 space-y-2">
-                            <li><a href="#shop" className="hover:text-white">All Products</a></li>
-                            <li><a href="#" className="hover:text-white">Skincare</a></li>
-                            <li><a href="#" className="hover:text-white">Haircare</a></li>
-                            <li><a href="#" className="hover:text-white">Sets & Gifts</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Shop section">All Products</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Skincare section">Skincare</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Haircare section">Haircare</a></li>
+                            <li><a href="#shop" className="hover:text-white" aria-label="Scroll to Sets & Gifts section">Sets & Gifts</a></li>
                         </ul>
                     </div>
                      <div>
                         <h4 className="font-semibold tracking-wider uppercase text-sand-beige">About</h4>
                         <ul className="mt-4 space-y-2">
-                            <li><a href="#about" className="hover:text-white">Our Story</a></li>
-                            <li><a href="#sustainability" className="hover:text-white">Sustainability</a></li>
-                            <li><a href="#" className="hover:text-white">FAQ</a></li>
-                            <li><a href="#contact" className="hover:text-white">Contact Us</a></li>
+                            <li><a href="#about" className="hover:text-white" aria-label="Scroll to Our Story section">Our Story</a></li>
+                            <li><a href="#sustainability" className="hover:text-white" aria-label="Scroll to Sustainability section">Sustainability</a></li>
+                            <li><a href="#reviews" className="hover:text-white" aria-label="Scroll to Reviews section">Reviews</a></li>
+                            <li><a href="#contact" className="hover:text-white" aria-label="Scroll to Contact Us section">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>

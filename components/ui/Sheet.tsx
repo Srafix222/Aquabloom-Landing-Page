@@ -1,7 +1,40 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Sheet: React.FC<{ open: boolean; onOpenChange: (open: boolean) => void; children: React.ReactNode }> = ({ open, onOpenChange, children }) => {
+    const sheetRef = useRef<HTMLDivElement>(null);
+    const triggerRef = useRef<Element | null>(null);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                onOpenChange(false);
+            }
+        };
+
+        if (open) {
+            triggerRef.current = document.activeElement;
+            document.addEventListener('keydown', handleKeyDown);
+            
+            // Delay focus to allow for transition
+            setTimeout(() => {
+                const focusableElements = sheetRef.current?.querySelectorAll(
+                    'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details, [tabindex]:not([tabindex="-1"])'
+                );
+                if (focusableElements && focusableElements.length > 0) {
+                    (focusableElements[0] as HTMLElement).focus();
+                }
+            }, 100);
+        } else if (triggerRef.current instanceof HTMLElement) {
+            triggerRef.current.focus();
+        }
+        
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [open, onOpenChange]);
+
     return (
         <AnimatePresence>
             {open && (
@@ -15,6 +48,7 @@ export const Sheet: React.FC<{ open: boolean; onOpenChange: (open: boolean) => v
                         aria-hidden="true"
                     />
                     <motion.div
+                        ref={sheetRef}
                         initial={{ x: '100%' }}
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}

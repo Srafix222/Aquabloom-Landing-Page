@@ -1,9 +1,29 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, type Variants } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { Button } from '../ui/Button';
 import { Sheet } from '../ui/Sheet';
+
+const sheetContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const sheetItemVariants: Variants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { ease: 'easeOut' }
+  },
+};
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,14 +73,21 @@ export const Header: React.FC = () => {
     <header className={cn("sticky top-0 z-30 w-full transition-all duration-300", isScrolled ? 'bg-sand-beige/80 shadow-md backdrop-blur-lg' : 'bg-transparent')}>
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <a href="#" className="text-3xl font-serif font-medium text-aloe-green">Aquabloom</a>
+          <a href="#hero" className="text-3xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage">Aquabloom</a>
           <nav className="hidden lg:flex items-center space-x-8">
             {navLinks.map(link => (
-              <a key={link.label} href={link.href} className={getLinkClass(link.id)}>{link.label}</a>
+              <a 
+                key={link.label} 
+                href={link.href} 
+                className={getLinkClass(link.id)}
+                aria-label={`Scroll to ${link.label} section`}
+              >
+                {link.label}
+              </a>
             ))}
           </nav>
           <div className="flex items-center space-x-4">
-            <a href="#shop" className="hidden lg:inline-flex">
+            <a href="#shop" className="hidden lg:inline-flex" aria-label="Scroll to Shop section">
               <Button variant="default">Shop Now</Button>
             </a>
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMenuOpen(true)} aria-label="Open menu">
@@ -70,22 +97,41 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <div className="flex flex-col h-full">
+        <motion.div 
+          className="flex flex-col h-full"
+          variants={sheetContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
             <div className="flex items-center justify-between">
-                <a href="#" className="text-2xl font-serif font-medium text-aloe-green">Aquabloom</a>
+                <a href="#hero" className="text-2xl font-serif font-medium text-aloe-green" aria-label="Aquabloom homepage">Aquabloom</a>
                 <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
                     <X className="h-6 w-6" />
                 </Button>
             </div>
             <nav className="mt-12 flex flex-col space-y-6">
                 {navLinks.map(link => (
-                    <a key={link.label} href={link.href} onClick={() => setIsMenuOpen(false)} className={cn("text-xl", getLinkClass(link.id))}>{link.label}</a>
+                    <motion.a 
+                      key={link.label} 
+                      href={link.href} 
+                      onClick={() => setIsMenuOpen(false)} 
+                      className={cn("text-xl", getLinkClass(link.id))}
+                      variants={sheetItemVariants}
+                      aria-label={`Scroll to ${link.label} section`}
+                    >
+                      {link.label}
+                    </motion.a>
                 ))}
             </nav>
-            <a href="#shop" className="mt-auto w-full">
-              <Button variant="default" className="w-full">Shop Now</Button>
-            </a>
-        </div>
+            <motion.a 
+              href="#shop" 
+              className="mt-auto w-full"
+              variants={sheetItemVariants}
+              aria-label="Scroll to Shop section"
+            >
+              <Button variant="default" className="w-full" onClick={() => setIsMenuOpen(false)}>Shop Now</Button>
+            </motion.a>
+        </motion.div>
       </Sheet>
     </header>
   );
